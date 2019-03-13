@@ -3,12 +3,21 @@
 #
 import sys
 import glob
+import main
+import numpy
+
+
 a_list = []
 a_list = sys.argv
 input_path = []
 output_path = ''
 concept = ''
 flags = []
+n = 'names'
+gen = 'genders'
+dt = 'dates'
+add = 'addresses'
+ph = 'phones'
 print(len(a_list))
 del a_list[0]
 
@@ -37,9 +46,23 @@ for paths in input_path:
     for f in files:
         my_file = open(f, encoding = "ISO-8859-1")
         data = my_file.read()
+        
+        if n in flags:
+            data, names_list = main.names(data)
+        if gen in flags:
+            data = main.genders(data)        
+        if dt in flags:
+            data,dates = main.dates(data)
+        if add in flags:
+            data, address_list = main.addresses(data)
+        if ph in flags:
+            data, phones_list = main.phones(data)
 
-        print(data[:25])
-
+        f_name = output_path + f
+        f_name = f_name.replace('.txt', '.redacted')
+        with open(f_name, 'w', encoding = "utf-8")as file:
+            file.write(data)
+            file.close()
 
 print(flags)
 
