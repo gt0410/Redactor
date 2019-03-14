@@ -7,6 +7,9 @@ verify_ssl = true
 
 [packages]
 nltk = "*"
+commonregex = "*"
+numpy = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.7"
