@@ -10,7 +10,7 @@ data = 'All rights reserved. Printed in the United States of America. No part of
 block = '\u2588'
 
 def test_address():
-    (d, address_list) = main.addresses(data)
+    d, address_list = main.addresses(data)
     
     assert len(address_list) == 8
     assert len(address_list) == d.count(block)

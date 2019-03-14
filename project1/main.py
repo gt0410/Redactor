@@ -32,7 +32,7 @@ def names(data):
 
     for name in name_list:
         data = data.replace(name, block) #failing
-    return (data, name_list)
+    return data, name_list
 
 
 def dates(data):
@@ -41,7 +41,7 @@ def dates(data):
 
     for date in dates_list:
         data = data.replace(date, block)
-    return (data, dates_list)
+    return data, dates_list
 
 def addresses(data):
     st_address = []
@@ -68,14 +68,14 @@ def addresses(data):
     for add in loc_list:
         data = data.replace(add, block)
     
-    return (data, loc_list)
+    return data, loc_list
 
 def phones(data):
     parsed_text = CommonRegex(data)
     phones_list = parsed_text.phones
     for phone in phones_list:
         data = data.replace(phone, block)
-    return (data, phones_list)
+    return data, phones_list
 
 def genders(data):
     genders_list=['he','she','him','her','his','hers','male','female','man','woman','men','women']
@@ -84,7 +84,7 @@ def genders(data):
         raw_text = r'\b' + gender + r'\b'
         data = re.sub(raw_text, block, data, flags = re.IGNORECASE)
 
-    return (data, genders_list)
+    return data, genders_list
 
 
 
@@ -104,7 +104,7 @@ def concept(data, concept):
             if c.lower() in sentence.lower():
                 data = data.replace(sentence, block)
                 concept_count += 1
-    return (data, concept_list, concept_count)
+    return data, concept_list, concept_count
 
 
 def stats(names_list, dates, address_list, phones_list, gen_list, concept_list, concept_count, stats_list, f):

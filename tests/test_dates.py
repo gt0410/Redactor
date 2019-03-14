@@ -9,7 +9,7 @@ data = 'All rights reserved. Printed in the United States of America. No part of
 
 block = '\u2588'
 def test_dates():
-    (d, dates_list) = main.dates(data)
+    d, dates_list = main.dates(data)
     
     assert len(dates_list) == 1
     assert len(dates_list) == d.count(block)

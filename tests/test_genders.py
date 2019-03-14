@@ -9,7 +9,7 @@ data = 'All rights reserved. Printed in the United States of America. No part of
 
 block = '\u2588'
 def test_genders():
-    d  = main.genders(data)
+    d, genders_list  = main.genders(data)
     
     assert d.count(block) == 2
 

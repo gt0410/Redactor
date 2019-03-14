@@ -1,0 +1,13 @@
+https://www.tutorialspoint.com/python/python_command_line_arguments.htm, helped me in understanding passing multiple arguments from command line.
+
+https://pythonprogramming.net/natural-language-toolkit-nltk-part-speech-tagging/ , These videos helped me in understanding the usage of nltk package.
+
+https://stackoverflow.com/questions/20290870/improving-the-extraction-of-human-names-with-nltk , referred to this for extracting human names.
+
+https://likegeeks.com/nlp-tutorial-using-python-nltk/ , helped in understanding the basic nltk concepts.
+
+https://github.com/madisonmay/CommonRegex , I have used commonregex function after checking the documentation from the above link.
+
+http://www.nltk.org/howto/wordnet.html , Used this to write the concept function.
+
+https://stackoverflow.com/questions/3964681/find-all-files-in-a-directory-with-extension-txt-in-python , helped me in using glob function to take imput files. 
