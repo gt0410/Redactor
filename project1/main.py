@@ -79,12 +79,13 @@ def phones(data):
 
 def genders(data):
     genders_list=['he','she','him','her','his','hers','male','female','man','woman','men','women']
-
+    c1 = data.count(block)
     for gender in genders_list:
         raw_text = r'\b' + gender + r'\b'
         data = re.sub(raw_text, block, data, flags = re.IGNORECASE)
-
-    return data, genders_list
+    c2 = data.count(block)
+    gender_count = c2 - c1
+    return data, genders_list, gender_count
 
 
 
@@ -107,17 +108,16 @@ def concept(data, concept):
     return data, concept_list, concept_count
 
 
-def stats(names_list, dates, address_list, phones_list, gen_list, concept_list, concept_count, stats_list, f):
+def stats(names_list, dates, address_list, phones_list, gen_list, gender_count, concept_list, concept_count, stats_list, f):
     status = ''
-    total = len(names_list) + len(address_list) + len(phones_list) + concept_count
+    total = len(names_list) + len(address_list) + len(phones_list) + concept_count + len(dates) + gender_count
     st = stats_list[0]
     status += ("Status for the file {}\n".format(f))
-    status += ("The following names are redacted from the file {} \n".format([i for i in names_list]))
-    status += ("The following dates are redacted from the file {} \n".format([i for i in dates]))
-    status += ("The following addresses are redacted from the file {} \n".format([i for i in address_list]))
-    status += ("The following phones are redacted from the file {} \n".format([i for i in phones_list]))
-    status += ("The following genders are redacted from the file {} \n".format([i for i in gen_list]))
-    status += ("The sentencces with following concepts are redacted from the file {} \n".format([i for i in concept_list]))
+    status += ("The following number of names are redacted from the file {} \n".format(len(names_list)))
+    status += ("The following number of dates are redacted from the file {} \n".format(len(dates)))
+    status += ("The following number of addresses are redacted from the file {} \n".format(len(address_list)))
+    status += ("The following number of phones are redacted from the file {} \n".format(len(phones_list)))
+    status += ("The following number of genders are redacted from the file {} \n".format(gender_count))
     status += ("The following number of sentences are redacted from the file {} \n".format(concept_count))
     status += ("The total number of redactions in the file are {} \n".format(total))
 
@@ -134,17 +134,17 @@ def stats(names_list, dates, address_list, phones_list, gen_list, concept_list, 
             err += ("There are no addresses in the file to be redacted\n")
         if len(phones_list) == 0:
             err += ("There are no phones in the file to be redacted\n")
-#        if gen_count == 0:
-#            err += ("There are no genders in the file to be redacted\n")
+        if gender_count == 0:
+            err += ("There are no genders in the file to be redacted\n")
         if concept_count == 0:
             err += ("There are no matches for concept in the file to be redacted\n")
 
         sys.stderr.write(err)
 
     else:
-        os.system("touch {}".format("stats.txt"))
+#        os.system("touch {}".format("stats.txt"))
         file_path = "stats.txt"
-        with open(file_path, 'w',encoding="utf-8") as file:
+        with open(file_path, 'a',encoding="utf-8") as file:
             file.write(status)
             file.close()
 

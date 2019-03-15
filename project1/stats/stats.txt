@@ -1,0 +1,48 @@
+Status for the file 1972-Nixon.txt
+The following number of names are redacted from the file 11 
+The following number of dates are redacted from the file 1 
+The following number of addresses are redacted from the file 0 
+The following number of phones are redacted from the file 0 
+The following number of genders are redacted from the file 0 
+The following number of sentences are redacted from the file 2 
+The total number of redactions in the file are 14 
+Status for the file 1963-Kennedy.txt
+The following number of names are redacted from the file 20 
+The following number of dates are redacted from the file 0 
+The following number of addresses are redacted from the file 0 
+The following number of phones are redacted from the file 0 
+The following number of genders are redacted from the file 0 
+The following number of sentences are redacted from the file 3 
+The total number of redactions in the file are 23 
+Status for the file 1947-Truman.txt
+The following number of names are redacted from the file 16 
+The following number of dates are redacted from the file 6 
+The following number of addresses are redacted from the file 0 
+The following number of phones are redacted from the file 0 
+The following number of genders are redacted from the file 0 
+The following number of sentences are redacted from the file 4 
+The total number of redactions in the file are 26 
+Status for the file otherfiles/1990-Bush.txt
+The following number of names are redacted from the file 23 
+The following number of dates are redacted from the file 2 
+The following number of addresses are redacted from the file 0 
+The following number of phones are redacted from the file 0 
+The following number of genders are redacted from the file 0 
+The following number of sentences are redacted from the file 28 
+The total number of redactions in the file are 53 
+Status for the file otherfiles/1995-Clinton.txt
+The following number of names are redacted from the file 33 
+The following number of dates are redacted from the file 2 
+The following number of addresses are redacted from the file 0 
+The following number of phones are redacted from the file 0 
+The following number of genders are redacted from the file 0 
+The following number of sentences are redacted from the file 36 
+The total number of redactions in the file are 71 
+Status for the file otherfiles/1976-Ford.txt
+The following number of names are redacted from the file 17 
+The following number of dates are redacted from the file 4 
+The following number of addresses are redacted from the file 0 
+The following number of phones are redacted from the file 0 
+The following number of genders are redacted from the file 0 
+The following number of sentences are redacted from the file 4 
+The total number of redactions in the file are 25 
