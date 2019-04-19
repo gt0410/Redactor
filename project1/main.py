@@ -30,8 +30,8 @@ def names(data):
             if name not in name_list:
                 name_list.append(name)
 
-    for name in name_list:
-        data = data.replace(name, block) #failing
+#    for name in name_list:
+#        data = data.replace(name, block) #failing
     return data, name_list
 
 
@@ -39,8 +39,8 @@ def dates(data):
     parsed_text = CommonRegex(data)
     dates_list = parsed_text.dates
 
-    for date in dates_list:
-        data = data.replace(date, block)
+#    for date in dates_list:
+#        data = data.replace(date, block)
     return data, dates_list
 
 def addresses(data):
@@ -65,27 +65,27 @@ def addresses(data):
         
     loc_list.extend(st_address)
     
-    for add in loc_list:
-        data = data.replace(add, block)
+#    for add in loc_list:
+#        data = data.replace(add, block)
     
     return data, loc_list
 
 def phones(data):
     parsed_text = CommonRegex(data)
     phones_list = parsed_text.phones
-    for phone in phones_list:
-        data = data.replace(phone, block)
+#    for phone in phones_list:
+#        data = data.replace(phone, block)
     return data, phones_list
 
 def genders(data):
     genders_list=['he','she','him','her','his','hers','male','female','man','woman','men','women']
-    c1 = data.count(block)
-    for gender in genders_list:
-        raw_text = r'\b' + gender + r'\b'
-        data = re.sub(raw_text, block, data, flags = re.IGNORECASE)
-    c2 = data.count(block)
-    gender_count = c2 - c1
-    return data, genders_list, gender_count
+#    c1 = data.count(block)
+#    for gender in genders_list:
+#        raw_text = r'\b' + gender + r'\b'
+#        data = re.sub(raw_text, block, data, flags = re.IGNORECASE)
+#    c2 = data.count(block)
+#    gender_count = c2 - c1
+    return data, genders_list
 
 
 
@@ -103,10 +103,21 @@ def concept(data, concept):
     for sentence in sentences:
         for c in concept_list:
             if c.lower() in sentence.lower():
-                data = data.replace(sentence, block)
+                m = len(sentence)
+                bl = m * block
+                data = data.replace(sentence, bl)
                 concept_count += 1
     return data, concept_list, concept_count
 
+def redact(names_list, genders_list, dates, address_list, phones_list, concept_list, data):
+    total = names_list + genders_list + dates + address_list + phones_list
+    for elm in total:
+        m = len(elm)
+        elm = r'\b' + elm + r'\b'
+        bl = m * block
+        data = re.sub(elm, bl, data)
+
+    return data
 
 def stats(names_list, dates, address_list, phones_list, gen_list, gender_count, concept_list, concept_count, stats_list, f):
     status = ''

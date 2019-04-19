@@ -72,6 +72,7 @@ for paths in input_path:
         
         data, concept_list, concept_count = main.concept(data, concept)
         
+        data = main.redact(names_list, genders_list, dates, address_list, phones_list, concept_list, data)
         status = main.stats(names_list, dates,address_list, phones_list, genders_list, gender_count, concept_list, concept_count, stats_list, f)
         
         #os.system("touch {}".format("stats.txt"))
