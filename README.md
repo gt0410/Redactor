@@ -1,7 +1,5 @@
 # Gowtham Teja Kanneganti
 
-## CS 5293, Spring 2019 Project 1
-
 In this project we are trying to redact the sensitive information from the .txt files. Whenever sensitive information is shared with the public, the data must go through a redaction process. That is, all sensitive names, places, and other sensitive information must be hidden. Documents such as police reports, court transcripts, and hospital records all containing sensitive information. Redacting this information is often expensive and time consuming.
 ## Getting Started
 
