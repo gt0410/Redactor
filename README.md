@@ -56,7 +56,7 @@ The structure is received initially from the repository created in the git. This
 git clone "git repository link"
 ~~~
 
-After that the Pipfile and Pipfile.lock will be created when piipenv is created. All other files are created in command line.
+After that the Pipfile and Pipfile.lock will be created when pipenv is created. All other files are created in command line.
 If any changes are made in the repository then they need to be pushed into git. The status of the git can be checked using the following code.
 ~~~
 git status
